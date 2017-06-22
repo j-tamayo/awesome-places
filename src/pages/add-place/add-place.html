@@ -88,7 +88,7 @@
             icon-left
             block
             outline
-            typee="button"
+            type="button"
             (click)="onTakePhoto()">
             <ion-icon name="camera"></ion-icon>
             Open Camera
@@ -96,7 +96,7 @@
         </ion-col>
       </ion-row>
 
-      <ion-row>
+      <ion-row *ngIf="imageUrl != ''">
         <ion-col>
           <img [src]="imageUrl">
         </ion-col>
