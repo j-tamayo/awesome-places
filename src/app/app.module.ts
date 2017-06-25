@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AgmCoreModule } from '@agm/core';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -28,7 +30,8 @@ import { PlacesService } from '../services/places';
     IonicModule.forRoot(MyApp),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB-DxEYX_yXbK5yfLf22pc2olxgLfLgiv0'
-    })
+    }),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,7 +47,8 @@ import { PlacesService } from '../services/places';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Geolocation,
     Camera,
-    PlacesService
+    PlacesService,
+    File
   ]
 })
 export class AppModule {}
